@@ -8,7 +8,7 @@ function somar() {
     let n2 = Number(tn2.value)
     let s = (n1 + n2) / 2
 
-    res.innerHTML = `Primeira nota: <strong>${n1}</strong>; Segunda nota: <strong>${n2}</strong>`
+    resultado.innerHTML = `Primeira nota: <strong>${n1}</strong>; Segunda nota: <strong>${n2}</strong>`
 
 
     if (s >= 7) {
