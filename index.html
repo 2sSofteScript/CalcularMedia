@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular Nota</title>
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <div class="home " id="container">
+
+        <h1> CALCULAR MÉDIA DO ALUNO </h1>
+        <p class="description ">Digite as notas dos alunos e obtenhas as média</p>
+        <!--Entrada Nome do Aluno-->
+        <div class="input-nota">
+            <label class="description">Nome do Aluno:</label>
+            <input class="input" type="text" name="nome_aluno"  id="inputNome" placeholder="Seu Nome" oninput="upperCase()">
+        </div>
+
+
+        <!--Entrada Primeira Nota do Aluno-->
+        <div class="input-nota">
+            <label class="description">Primeira nota:</label>
+            <input class="input" type="number" name="txtn1" required id="txtn1" placeholder="Pimeira Nota">
+        </div>
+
+
+        <!--Entrada Segunda Nota do Aluno-->
+        <div class="input-nota">
+            <label class="description">Segunda nota:</label>
+            <input class="input" type="number" name="txtn2" required id="txtn2" placeholder="Segunda Nota">
+        </div>
+        <!--Botão Somar Nota do Aluno-->
+        <div class="btn-somar-media">
+            <input id="btn-somar" type="button" value="Calcular" onclick="somar()">
+        </div>
+        
+
+        <div id="res">
+
+        </div>
+        <!--
+        <p id="mensagem">
+
+        </p>
+        -->
+        <div id="media">
+
+        </div>
+
+        <div class="horarioBr">
+            
+        </div>
+
+    </div>
+
+    <div class="div-footer">
+        <!--Rodapé do website-->
+        <span class="span-footer">
+
+            <footer class="footer"> Desenvolvido por: Allesson Gomes | &copy; DevOps</footer>
+            <p class="nota">ATENÇÃO! A média do aluno é calculada usando apenas 2 notas.</p>
+        </span>
+    </div>
+    <script src="./javascript/script.js"></script>
+</body>
+
+</html>

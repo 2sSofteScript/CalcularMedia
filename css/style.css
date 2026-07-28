@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    color: rgb(255, 255, 255);
+    background-color: #003644;
+    max-width: 100%;
+    min-height: 100%;
+}
+
+h1 {
+    font-size: 50px;
+    font-family: Arial;
+    text-align: center;
+    margin-top: 2%;
+}
+
+h2 {
+    font-size: 3pc;
+    font-family: Arial;
+    text-align: center;
+}
+
+.home {
+   /* margin-top: 10%;*/
+    padding-top: 10px;
+    /*margin-bottom: 200px;*/
+    text-align: center;
+    outline: 5px solid #03a7b3;
+    /*margin-right: 50px;
+    margin-left: 50px;*/
+    margin: 10% 50px 160px 50px;
+}
+
+
+
+/*
+#btn {
+    margin-left: 20px;
+    font-size: 24px;
+    background-color: #00e600;
+    width: 150%;
+    bottom: 150px;
+    line-height: 150px;
+    text-align: center;
+    border-radius: 6px;
+
+
+
+}
+*/
+
+
+.description {
+    font-family: Arial;
+    text-align: center;
+    margin-top: 10px;
+
+}
+
+
+.input {
+    border: none;
+    font: normal 18pt, arial;
+    width: 150px;
+    /*padding-left: 10px;*/
+    border-radius: 6px;
+    padding: 10px 0 5px 10px;
+    margin-left: 10px;
+
+
+
+}
+
+
+.input-nota {
+    margin-top: 16px;
+    text-align: center;
+
+
+}
+
+.input_nome {
+    margin: 16px;
+    text-align: center;
+
+}
+
+#btn-somar {
+    font-weight: 800;
+    font-size: 20px;
+    font-family: Arial;
+    margin-top: 35px;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 6px;
+    width: 150px;
+    transition: background-color 0.3s ease;
+    color: #003644;
+    border: none;
+    box-shadow: 0 9px 60px 0 #03a7b3;
+
+}
+
+.btn-somar-media {
+    text-align: center;
+
+
+}
+
+#btn-somar:hover {
+    background-color: #03a7b3;
+    text-decoration: underline;
+
+}
+
+#btn-somar:active {
+    opacity: 0.6;
+}
+
+
+
+div#res {
+    font-family: arial;
+    margin-top: 20px;
+    font-size: 1pc;
+    text-align: center;
+}
+
+#media,
+#mensagem {
+    margin: 16px;
+    font-size: 20px;
+    font-family: sans-serif;
+    /*width: auto;*/
+    padding: 15px;
+    text-align: center;
+    border-radius: 6px;
+    text-align: center;
+    transition: background-color 0.6s ease;
+
+
+
+}
+
+.div-footer {
+    background-color: #03a7b3;
+    padding: 16px;
+    border-radius: 6px 32px 6px 32px;
+
+
+
+}
+
+.footer {
+    text-align: center;
+    font-family: Arial;
+    font-size: 20px;
+    color: #0e0707;
+    margin: auto;
+
+}
+
+.nota {
+    margin-top: 5px;
+    font-family: Arial;
+    text-align: center;
+    font-size: 15px;
+    color: #ffffffd7;
+}
