@@ -26,14 +26,14 @@ h2 {
 }
 
 .home {
-   /* margin-top: 10%;*/
+    /* margin-top: 10%;*/
     padding-top: 10px;
     /*margin-bottom: 200px;*/
     text-align: center;
     outline: 5px solid #03a7b3;
     /*margin-right: 50px;
     margin-left: 50px;*/
-    margin: 10% 50px 160px 50px;
+    margin: 10% 50px 35px 50px;
 }
 
 
@@ -88,6 +88,10 @@ h2 {
     margin: 16px;
     text-align: center;
 
+}
+
+input:focus {
+    outline: none;
 }
 
 #btn-somar {
@@ -170,5 +174,6 @@ div#res {
     font-family: Arial;
     text-align: center;
     font-size: 15px;
-    color: #ffffffd7;
+    font-weight: bolder;
+    color: #fbff00;
 }
