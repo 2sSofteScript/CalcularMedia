@@ -25,31 +25,30 @@
         <form action="" id="form">
             <div class="inputBox">
                 <div class="input-nota">
-                    <label class="description">Nome do Aluno:</label>
+                    <label>Nome do Aluno:</label>
                     <input class="input" type="text" name="nome_aluno" id="inputNome" placeholder="Seu Nome">
                 </div>
                 <span class="error"></span>
             </div>
             <!--Entrada Nome do Aluno-->
 
+            <!-- Entrada Primeira Nota do Aluno -->
             <div class="inputBox">
                 <div class="input-nota">
-                    <label class="description">Primeira nota:</label>
-                    <input class="input" type="number" name="txtn1" id="txtn1" placeholder="Pimeira Nota">
+                    <label>Primeira nota:</label>
+                    <input class="input" type="number" step="any" name="txtn1" id="txtn1" placeholder="Primeira Nota">
                 </div>
                 <span class="error"></span>
             </div>
-            <!--Entrada Primeira Nota do Aluno-->
 
-
+            <!-- Entrada Segunda Nota do Aluno -->
             <div class="inputBox">
                 <div class="input-nota">
-                    <label class="description">Segunda nota:</label>
-                    <input class="input" type="number" name="txtn2" id="txtn2" placeholder="Segunda Nota">
+                    <label>Segunda nota:</label>
+                    <input class="input" type="number" step="any" name="txtn2" id="txtn2" placeholder="Segunda Nota">
                 </div>
                 <span class="error"></span>
             </div>
-            <!--Entrada Segunda Nota do Aluno-->
 
             <button id="btn-somar" type="submit" value="calcularMedia">Calcular Média</button>
             <!--Botão Somar Nota do Aluno -->

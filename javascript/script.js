@@ -4,18 +4,18 @@ form.addEventListener("submit", function (event) {
     event.preventDefault();
 
     const fields = [
-        { id: "inputNome", label: "description", validator: isInputNome },
-        { id: "txtn1", label: "description", validator: numberIsValid },
-        { id: "txtn2", label: "description", validator: numberIsValid } // Removido o termo inválido daqui
+        { id: "inputNome", validator: isInputNome },
+        { id: "txtn1", validator: numberIsValid },
+        { id: "txtn2", validator: numberIsValid }
     ];
 
     const errorIcon = '<i class="fa-solid fa-circle-exclamation"></i>';
-    let formIsValid = true; // Variável para controlar se o formulário está 100% correto
+    let formIsValid = true;
 
     fields.forEach(function (field) {
-        const inputNome = document.getElementById(field.id);
-        const inputBox = inputNome.closest(".inputBox");
-        const inputValue = inputNome.value;
+        const inputField = document.getElementById(field.id);
+        const inputBox = inputField.closest(".inputBox");
+        const inputValue = inputField.value;
         const errorSpan = inputBox.querySelector(".error");
 
         errorSpan.innerHTML = '';
@@ -28,22 +28,20 @@ form.addEventListener("submit", function (event) {
             errorSpan.innerHTML = `${errorIcon} ${fieldValidator.errorMenssage}`;
             inputBox.classList.add("invalid");
             inputBox.classList.remove("valid");
-            formIsValid = false; // Se um único campo falhar, bloqueia o cálculo
+            formIsValid = false;
         }
     });
 
-    // DISPARA A FUNÇÃO APENAS SE TODOS OS CAMPOS FOREM VÁLIDOS
     if (formIsValid) {
         somar();
     }
 });
 
-// VALIDA O NOME DO USUÁRIO 
 function isInputNome(value) {
     const validator = { isValid: true, errorMenssage: null };
     if (isEmpty(value)) {
         validator.isValid = false;
-        validator.errorMenssage = "O Campo é obrigatório.";
+        validator.errorMenssage = "O campo nome é obrigatório.";
         return validator;
     }
     const min = 3;
@@ -60,60 +58,67 @@ function isInputNome(value) {
     return validator;
 }
 
-// VALIDA A NOTA INSERIDA PELO USUÁRIO 
 function numberIsValid(value) {
     const validator = { isValid: true, errorMenssage: null };
     if (isEmpty(value)) {
         validator.isValid = false;
-        validator.errorMenssage = "O campo de nota é obrigatória.";
+        validator.errorMenssage = "O campo de nota é obrigatório.";
         return validator;
+    }
+    const nota = Number(value);
+    if (nota < 0 || nota > 10 || isNaN(nota)) {
+        validator.isValid = false;
+        validator.errorMenssage = "Digite uma nota válida entre 0 e 10.";
     }
     return validator;
 }
 
-// FUNÇÃO PARA CALCULAR A MÉDIA
 function somar() {
     let inputNome = document.getElementById("inputNome");
-    let primeiraNota = document.getElementById("txtn1");
-    let segundaNota = document.getElementById("txtn2");
-
-    // DECLARAÇÃO DOS ELEMENTOS DE EXIBIÇÃO (Evita o ReferenceError)
+    let tn1 = document.getElementById("txtn1");
+    let tn2 = document.getElementById("txtn2");
     let resultado = document.getElementById("resultado");
     let media = document.getElementById("media");
 
     let nome = String(inputNome.value.toUpperCase());
-    let nota1 = Number(primeiraNota.value);
-    let nota2 = Number(segundaNota.value);
-    let soma = (nota1 + nota2) / 2;
+    let n1 = Number(tn1.value);
+    let n2 = Number(tn2.value);
+    let s = (n1 + n2) / 2;
 
-    resultado.innerHTML = `Primeira nota: <strong>${nota1}</strong>; Segunda nota: <strong>${nota2}</strong>`;
+    resultado.innerHTML = `Primeira nota: <strong>${n1}</strong>; Segunda nota: <strong>${n2}</strong>`;
 
-    if (soma >= 7) {
-        media.innerHTML = ` Parabéns, ${nome}! Você está aprovado. Sua média é: ${soma} pontos.`;
+    if (s >= 7) {
+        media.innerHTML = ` Parabéns, ${nome}! Você está aprovado. Sua média é: ${s.toFixed(1)} pontos.`;
         media.style.background = "#00e600";
     } else {
-        media.innerHTML = `Você está reprovado, ${nome}! Sua média é: ${soma} pontos.`;
+        media.innerHTML = `Você está reprovado, ${nome}! Sua média é: ${s.toFixed(1)} pontos.`;
         media.style.background = "#e60000";
     }
 
-    // Limpa os campos após exibir o resultado com sucesso
     inputNome.value = "";
-    primeiraNota.value = "";
-    segundaNota.value = "";
+    tn1.value = "";
+    tn2.value = "";
 
     displayhorario();
 
-    // --- Remove o resultado após 5 segundos ---
+    // Inicia o sumiço gradual (fade-out) aos 4.5 segundos
+    setTimeout(function () {
+        media.style.opacity = "0";
+    }, 4500);
+
+    // Limpa tudo definitivamente aos 5 segundos
     setTimeout(function () {
         resultado.innerHTML = "";
         media.innerHTML = "";
-        media.style.background = "none"; // Remove a cor verde ou vermelha
-    }, 5000); // 5000 milissegundos = 5 segundos
+        media.style.background = "none";
+        media.style.opacity = "1"; // Reseta para o próximo cálculo funcionar
+    }, 5000);
 }
+
 function displayhorario() {
-    document.querySelector(".horarioBr").innerHTML = Date();
+    document.querySelector(".horarioBr").innerHTML = new Date().toLocaleTimeString('pt-BR');
 }
 
 function isEmpty(value) {
-    return value === '';
+    return value.trim() === '';
 }
