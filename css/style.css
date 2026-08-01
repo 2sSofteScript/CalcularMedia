@@ -13,27 +13,28 @@ body {
 }
 
 h1 {
-    font-size: 50px;
+    font-size: 30px;
     font-family: Arial;
     text-align: center;
     margin-top: 2%;
+    margin-bottom: 2rem;
 }
 
 h2 {
-    font-size: 3pc;
+    font-size: 32rem;
     font-family: Arial;
     text-align: center;
 }
 
 .home {
     /* margin-top: 10%;*/
-    padding-top: 10px;
+    padding-top: 19px;
     /*margin-bottom: 200px;*/
     text-align: center;
     outline: 5px solid #03a7b3;
     /*margin-right: 50px;
     margin-left: 50px;*/
-    margin: 10% 50px 35px 50px;
+    margin: 10% 20px 35px 30px;
 }
 
 
@@ -56,10 +57,12 @@ h2 {
 
 
 .description {
+    display: inline-block;
     font-family: Arial;
+    font-weight: 600;
     text-align: center;
-    margin-top: 10px;
-
+    
+    
 }
 
 
@@ -73,7 +76,7 @@ h2 {
     margin-left: 10px;
 
 
-
+    
 }
 
 
@@ -94,15 +97,46 @@ input:focus {
     outline: none;
 }
 
+
+.error{
+    display:inline-block;
+    margin-top: 0.3rem;
+    margin-left: 130px;
+    color:#dc2626;
+    font-size: 12px;
+    font-family:  'Arial Narrow Bold', sans-serif;
+    max-width: 300px;
+    font-weight: 600;
+  
+}
+
+
+.inputBox.invalid .description{
+    color:#dc2626;
+}
+
+.inputBox.invalid .input{
+    border: 2px solid #dc2626;
+}
+
+
+.inputBox.valid .description{
+    color:#22c55e;
+}
+
+.inputBox.valid .input{
+    border: 2px solid #22c55e;
+}
+
 #btn-somar {
     font-weight: 800;
     font-size: 20px;
     font-family: Arial;
-    margin-top: 35px;
+    margin-top: 25px;
     cursor: pointer;
-    padding: 6px;
+    padding: 6px ;
     border-radius: 6px;
-    width: 150px;
+    width: 200px;
     transition: background-color 0.3s ease;
     color: #003644;
     border: none;
@@ -110,7 +144,7 @@ input:focus {
 
 }
 
-.btn-somar-media {
+#btn-somar-media {
     text-align: center;
 
 
@@ -128,8 +162,9 @@ input:focus {
 
 
 
-div#res {
+div#resultado {
     font-family: arial;
+    font-weight: bold;
     margin-top: 20px;
     font-size: 1pc;
     text-align: center;

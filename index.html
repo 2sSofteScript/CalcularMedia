@@ -3,6 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calcular Nota</title>
     <link rel="stylesheet" href="css/style.css">
@@ -16,55 +21,65 @@
         <h1> CALCULAR MÉDIA DO ALUNO </h1>
         <p class="description ">Digite suas notas e obtenha a média</p>
         <!--Entrada Nome do Aluno-->
-        <div class="input-nota">
-            <label class="description">Nome do Aluno:</label>
-            <input class="input" type="text" name="nome_aluno"  id="inputNome" placeholder="Seu Nome" oninput="upperCase()">
-        </div>
+
+        <form action="" id="form">
+            <div class="inputBox">
+                <div class="input-nota">
+                    <label class="description">Nome do Aluno:</label>
+                    <input class="input" type="text" name="nome_aluno" id="inputNome" placeholder="Seu Nome">
+                </div>
+                <span class="error"></span>
+            </div>
+            <!--Entrada Nome do Aluno-->
+
+            <div class="inputBox">
+                <div class="input-nota">
+                    <label class="description">Primeira nota:</label>
+                    <input class="input" type="number" name="txtn1" id="txtn1" placeholder="Pimeira Nota">
+                </div>
+                <span class="error"></span>
+            </div>
+            <!--Entrada Primeira Nota do Aluno-->
 
 
-        <!--Entrada Primeira Nota do Aluno-->
-        <div class="input-nota">
-            <label class="description">Primeira nota:</label>
-            <input class="input" type="number" name="txtn1" required id="txtn1" placeholder="Pimeira Nota">
-        </div>
+            <div class="inputBox">
+                <div class="input-nota">
+                    <label class="description">Segunda nota:</label>
+                    <input class="input" type="number" name="txtn2" id="txtn2" placeholder="Segunda Nota">
+                </div>
+                <span class="error"></span>
+            </div>
+            <!--Entrada Segunda Nota do Aluno-->
+
+            <button id="btn-somar" type="submit" value="calcularMedia">Calcular Média</button>
+            <!--Botão Somar Nota do Aluno -->
 
 
-        <!--Entrada Segunda Nota do Aluno-->
-        <div class="input-nota">
-            <label class="description">Segunda nota:</label>
-            <input class="input" type="number" name="txtn2" required id="txtn2" placeholder="Segunda Nota">
-        </div>
-        <!--Botão Somar Nota do Aluno-->
-        <div class="btn-somar-media">
-            <input id="btn-somar" type="button" value="Calcular" onclick="somar()">
-        </div>
-        
+        </form>
 
         <div id="resultado">
 
         </div>
-        <!--
-        <p id="mensagem">
+        <!--Mostra as Notas Inseridas Pelo Usuário-->
 
-        </p>
-        -->
         <div id="media">
 
         </div>
+        <!--Mostra a Média Usuário-->
 
         <div class="horarioBr">
-            
+
         </div>
 
     </div>
 
     <div class="div-footer">
-        <!--Rodapé do website-->
         <span class="span-footer">
 
             <footer class="footer"> Desenvolvido por: Allesson Almeida | &copy; DevOps</footer>
             <p class="nota">ATENÇÃO! A média do aluno é calculada usando apenas 2 notas.</p>
         </span>
+        <!--Rodapé do website-->
     </div>
     <script src="./javascript/script.js"></script>
 </body>
