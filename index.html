@@ -8,7 +8,8 @@
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
     <title>Calcular Nota</title>
     <link rel="stylesheet" href="css/style.css">
 
@@ -25,7 +26,7 @@
         <form action="" id="form">
             <div class="inputBox">
                 <div class="input-nota">
-                    <label>Nome do Aluno:</label>
+                    <label class="description ">Nome do Aluno:</label>
                     <input class="input" type="text" name="nome_aluno" id="inputNome" placeholder="Seu Nome">
                 </div>
                 <span class="error"></span>
@@ -35,7 +36,7 @@
             <!-- Entrada Primeira Nota do Aluno -->
             <div class="inputBox">
                 <div class="input-nota">
-                    <label>Primeira nota:</label>
+                    <label class="description ">Primeira nota:</label>
                     <input class="input" type="number" step="any" name="txtn1" id="txtn1" placeholder="Primeira Nota">
                 </div>
                 <span class="error"></span>
@@ -44,7 +45,7 @@
             <!-- Entrada Segunda Nota do Aluno -->
             <div class="inputBox">
                 <div class="input-nota">
-                    <label>Segunda nota:</label>
+                    <label class="description ">Segunda nota:</label>
                     <input class="input" type="number" step="any" name="txtn2" id="txtn2" placeholder="Segunda Nota">
                 </div>
                 <span class="error"></span>

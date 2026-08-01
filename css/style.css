@@ -36,13 +36,13 @@ h1 {
     font-family: Arial;
     font-weight: 600;
     text-align: center;
-    padding-bottom: 26px;
+
 
 }
 
 
 .input-nota {
-
+    margin-top: 15px;
     font-family: Arial;
     font-weight: 600;
     display: flex;
@@ -62,13 +62,13 @@ h1 {
 
 .input {
     border: none;
-    font: normal 18pt, arial;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    
     width: 150px;
-    /*padding-left: 10px;*/
     border-radius: 6px;
     padding: 10px 0 5px 10px;
     margin-left: 10px;
-
 
 
 }
@@ -211,9 +211,10 @@ div#resultado {
 
     .input {
         margin-left: 0;
-        margin-top: 8px;
+        margin-top: 9px;
         width: 80%;
-        /* O input ganha mais espaço na tela do celular */
+        font-size: 16px;
+        
     }
 
     .error {
