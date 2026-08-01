@@ -13,7 +13,7 @@ body {
 }
 
 h1 {
-    font-size: 30px;
+    font-size: 25px;
     font-family: Arial;
     text-align: center;
     margin-top: 2%;
@@ -34,7 +34,7 @@ h2 {
     outline: 5px solid #03a7b3;
     /*margin-right: 50px;
     margin-left: 50px;*/
-    margin: 10% 20px 35px 30px;
+    margin: 10% 15px 35px 15px;
 }
 
 
