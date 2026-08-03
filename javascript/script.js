@@ -1,6 +1,8 @@
 const form = document.getElementById("form");
+const msg = alert("ATENÇÃO! A média é calculada apenas com duas notas. Formula: s = (nota1 + nota2) / 2");
+
 const nome = prompt("Digite seu nome: ")
-const msgInicial = alert(`Seja bem-vindo, ${nome}!`);
+const msgInicial = alert(`Seja bem-vindo, ${nome}! Calcule suas notas e obetenha a média.`);
 
 let fadeTimeout;
 let cleanTimeout;
@@ -39,6 +41,7 @@ form.addEventListener("submit", function (event) {
     }
 });
 
+//Função para válidor nome  do usuário
 function isInputNome(value) {
     const validator = { isValid: true, errorMessage: null };
     if (isEmpty(value)) {
@@ -49,22 +52,23 @@ function isInputNome(value) {
     const min = 3;
     if (value.length < min) {
         validator.isValid = false;
-        validator.errorMessage = `O campo deve ter no mínimo ${min} caracteres.`;
+        validator.errorMessage = `O nome deve ter no mínimo ${min} caracteres.`;
         return validator;
     }
     const regex = /^[A-Za-zÀ-ÿ\s]+$/;
     if (!regex.test(value)) {
         validator.isValid = false;
-        validator.errorMessage = "O nome deve conter apenas letras."; // Corrigido
+        validator.errorMessage = "O nome deve conter apenas letras.";
     }
     return validator;
 }
 
+//Função para válidar as nota digitada pelo usuário
 function numberIsValid(value, tipoNota) {
     const validator = { isValid: true, errorMessage: null };
     if (isEmpty(value)) {
         validator.isValid = false;
-        validator.errorMessage = `Digite a ${tipoNota} nota.`; // Corrigido dinamicamente
+        validator.errorMessage = `Digite a ${tipoNota} nota.`;
         return validator;
     }
     const nota = Number(value);
@@ -75,6 +79,7 @@ function numberIsValid(value, tipoNota) {
     return validator;
 }
 
+//Função parar calcular a média
 function calcularMedia() {
     let inputNome = document.getElementById("inputNome");
     let tn1 = document.getElementById("txtn1");
@@ -89,7 +94,7 @@ function calcularMedia() {
     clearTimeout(fadeTimeout);
     clearTimeout(cleanTimeout);
     media.style.opacity = "1";
-    resultado.innerHTML = `Primeira nota: <strong>${n1}</strong>; Segunda nota: <strong>${n2}</strong>`;
+    resultado.innerHTML = `Primeira nota: <strong>${string(n1)}</strong>; Segunda nota: <strong>${string(n2)}</strong>`;
 
     // Lógica de Aprovação, Recuperação e Reprovação
     if (m >= 7) {
@@ -120,8 +125,9 @@ function calcularMedia() {
     }, 5000);
 }
 
+//Função para mostra o horária na tela leyout
 function displayhorario() {
-    
+
     document.querySelector(".horarioBr").innerHTML = new Date().toLocaleTimeString('pt-BR');
 }
 
