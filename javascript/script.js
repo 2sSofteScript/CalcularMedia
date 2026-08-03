@@ -2,7 +2,7 @@ const form = document.getElementById("form");
 const msg = alert("ATENÇÃO! A média é calculada apenas com duas notas. Formula: s = (nota1 + nota2) / 2");
 
 const nome = prompt("Digite seu nome: ")
-const msgInicial = alert(`Seja bem-vindo, ${nome}! Calcule suas notas e obetenha a média.`);
+const msgInicial = alert(`Seja bem-vindo, ${nome}! Calcule suas notas e obtenha a média.`);
 
 let fadeTimeout;
 let cleanTimeout;
