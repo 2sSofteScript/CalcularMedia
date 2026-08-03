@@ -1,8 +1,7 @@
 const form = document.getElementById("form");
-const msg = alert("ATENÇÃO! A média é calculada apenas com duas notas. Formula: s = (nota1 + nota2) / 2");
-
-const nome = prompt("Digite seu nome: ")
-const msgInicial = alert(`Seja bem-vindo, ${nome}! Calcule suas notas e obtenha a média.`);
+const msg = alert("ATENÇÃO! A média é calculada apenas com duas notas. Formula: s = (nota1 + nota2) / 2")
+const NomeInput = prompt("Digite seu nome: ");
+const msgBoasVinda = alert(`Seja bem-vindo, ${NomeInput}! Calcule suas notas e obtenha a média.`)
 
 let fadeTimeout;
 let cleanTimeout;
@@ -40,7 +39,6 @@ form.addEventListener("submit", function (event) {
         calcularMedia();
     }
 });
-
 //Função para válidor nome  do usuário
 function isInputNome(value) {
     const validator = { isValid: true, errorMessage: null };
@@ -52,23 +50,22 @@ function isInputNome(value) {
     const min = 3;
     if (value.length < min) {
         validator.isValid = false;
-        validator.errorMessage = `O nome deve ter no mínimo ${min} caracteres.`;
+        validator.errorMessage = `O campo deve ter no mínimo ${min} caracteres.`;
         return validator;
     }
     const regex = /^[A-Za-zÀ-ÿ\s]+$/;
     if (!regex.test(value)) {
         validator.isValid = false;
-        validator.errorMessage = "O nome deve conter apenas letras.";
+        validator.errorMessage = "O nome deve conter apenas letras."; // Corrigido
     }
     return validator;
 }
-
-//Função para válidar as nota digitada pelo usuário
+//Função para válidar as notas digitada pelo usuário
 function numberIsValid(value, tipoNota) {
     const validator = { isValid: true, errorMessage: null };
     if (isEmpty(value)) {
         validator.isValid = false;
-        validator.errorMessage = `Digite a ${tipoNota} nota.`;
+        validator.errorMessage = `Digite a ${tipoNota} nota.`; // Corrigido dinamicamente
         return validator;
     }
     const nota = Number(value);
@@ -78,8 +75,7 @@ function numberIsValid(value, tipoNota) {
     }
     return validator;
 }
-
-//Função parar calcular a média
+//Função para calcular a média
 function calcularMedia() {
     let inputNome = document.getElementById("inputNome");
     let tn1 = document.getElementById("txtn1");
@@ -94,17 +90,17 @@ function calcularMedia() {
     clearTimeout(fadeTimeout);
     clearTimeout(cleanTimeout);
     media.style.opacity = "1";
-    resultado.innerHTML = `Primeira nota: <strong>${string(n1)}</strong>; Segunda nota: <strong>${string(n2)}</strong>`;
+    resultado.innerHTML = `Primeira nota: <strong>${n1}</strong>; Segunda nota: <strong>${n2}</strong>`;
 
     // Lógica de Aprovação, Recuperação e Reprovação
     if (m >= 7) {
-        media.innerHTML = `Parabéns, ${nome}! Você está aprovado. Sua média é: ${m.toFixed(1)} pontos.`;
+        media.innerHTML = `Parabéns, ${nome}! Você está aprovado. Sua média é: ${m.toFixed(1).replace('.', ',')} pontos.`;
         media.style.background = "#00e600"; // Verde
     } else if (m >= 5 && m < 7) {
-        media.innerHTML = `Você está de recuperação, ${nome}! Sua média é: ${m.toFixed(1)} pontos.`;
+        media.innerHTML = `Você está de recuperação, ${nome}! Sua média é: ${m.toFixed(1).replace('.', ',')} pontos.`;
         media.style.background = "#ffcc00"; // Amarelo/Laranja para recuperação
     } else {
-        media.innerHTML = `Você está reprovado, ${nome}! Sua média é: ${m.toFixed(1)} pontos.`;
+        media.innerHTML = `Você está reprovado, ${nome}! Sua média é: ${m.toFixed(1).replace('.', ',')} pontos.`;
         media.style.background = "#e60000"; // Vermelho
     }
 
@@ -124,7 +120,6 @@ function calcularMedia() {
         media.style.background = "none";
     }, 5000);
 }
-
 //Função para mostra o horária na tela leyout
 function displayhorario() {
 
