@@ -112,7 +112,7 @@ function calcularMedia() {
     fadeTimeout = setTimeout(function () {
         media.style.opacity = "0";
         media.style.transition = "opacity 0.5s ease";
-    }, 3500);
+    }, 8500);
 
     cleanTimeout = setTimeout(function () {
         resultado.innerHTML = "";
