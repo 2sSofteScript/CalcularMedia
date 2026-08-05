@@ -1,5 +1,5 @@
 const form = document.getElementById("form");
-const msg = alert("ATENÇÃO! As informações fornecidas pelo usuário serão perdidas após realizar o cálculo. A média é calculada com base em duas notas. Fórmula do cálculo: s = (nota1 + nota2) / 2")
+const msg = alert("ATENÇÃO! As informações fornecidas pelo usuário serão perdidas após realizar o cálculo. A média é calculada com base em duas notas. Fórmula do cálculo: m = (nota1 + nota2) / 2")
 const NomeInput = prompt("Digite seu nome: ");
 const msgBoasVinda = alert(`Seja bem-vindo, ${NomeInput}! Calcule suas notas e obtenha a média.`)
 
@@ -95,13 +95,13 @@ function calcularMedia() {
     // Lógica de Aprovação, Recuperação e Reprovação
     if (m >= 7) {
         media.innerHTML = `Parabéns, ${nome}! Você está aprovado. Sua média é: ${m.toFixed(1).replace('.', ',')} pontos.`;
-        media.style.background = "#00e600"; // Verde
-    } else if (m >= 5 && m < 7) {
+        media.style.background = "#00e600"; // Verde/para Aprovado
+    } else if (m > 5 && m < 7) {
         media.innerHTML = `Você está de recuperação, ${nome}! Sua média é: ${m.toFixed(1).replace('.', ',')} pontos.`;
-        media.style.background = "#ffcc00"; // Amarelo/Laranja para recuperação
+        media.style.background = "#ffcc00"; // Amarelo/ para recuperação
     } else {
         media.innerHTML = `Você está reprovado, ${nome}! Sua média é: ${m.toFixed(1).replace('.', ',')} pontos.`;
-        media.style.background = "#e60000"; // Vermelho
+        media.style.background = "#e60000"; // Vermelho/para Reprovado
     }
 
     inputNome.value = "";
@@ -112,13 +112,13 @@ function calcularMedia() {
     fadeTimeout = setTimeout(function () {
         media.style.opacity = "0";
         media.style.transition = "opacity 0.5s ease";
-    }, 4500);
+    }, 3500);
 
     cleanTimeout = setTimeout(function () {
         resultado.innerHTML = "";
         media.innerHTML = "";
         media.style.background = "none";
-    }, 5000);
+    }, 9000);
 }
 //Função para mostra o horária na tela leyout
 function displayhorario() {
